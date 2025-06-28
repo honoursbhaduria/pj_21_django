@@ -12,6 +12,7 @@ def product_detail(request, pk):
         product = Product.objects.get(pk=pk)
         return render(request, 'catalog/index2.html', {'product': product})
     except Product.DoesNotExist:
-        return HttpResponse("Product not found", status=404)  
-    
-    
+        return HttpResponse("Product not found", status=404)
+
+def home(request):
+    return HttpResponse("<center><h1>Welcome to the E-commerce Site</h1></center>", status=200)
